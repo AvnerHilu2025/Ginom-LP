@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GINOM - Coming Soon</title>
+  <link rel="icon" href="Fav-icon.png" type="image/png">
+  <style>
+    @font-face {
+      font-family: 'Geist';
+      src: url('Geist-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Geist';
+      src: url('Geist-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Geist', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      text-align: center;
+      background: linear-gradient(135deg, #172654, #1E42AC);
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Subtle overlay for improved contrast */
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #E5C3F0;
+    }
+    p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 40px;
+      color: #EBECF0;
+    }
+    .button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      background-color: #CEC2EF;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background-color: #C3CFEF;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .button {
+        font-size: 1rem;
+        padding: 12px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      .button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="content">
+    <img src="logo-white.svg" alt="GINOM Logo" class="logo">
+    <h1>GINOM - Coming Soon</h1>
+    <p>We’re working hard to bring you an innovative solution. Stay tuned!</p>
+    <a href="mailto:info@ginom.com" class="button">Contact Us</a>
+  </div>
+</body>
+</html>
