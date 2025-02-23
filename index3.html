@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GINOM - Coming Soon</title>
+  <link rel="icon" href="Fav-icon.png" type="image/png">
+  <style>
+    @font-face {
+      font-family: 'Geist';
+      src: url('Geist-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Geist';
+      src: url('Geist-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Geist', sans-serif;
+      background-color: #172654;
+      color: #FFFFFF;
+      text-align: center;
+      scroll-behavior: smooth;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      padding: 20px;
+      margin: auto;
+    }
+    
+    .top-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #E5C3F0;
+      color: #172654;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .top-button:hover {
+      background-color: #C3CFEF;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #E5C3F0;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #EBECF0;
+    }
+    
+    .carousel {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .button {
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      background-color: #CEC2EF;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      background-color: #C3CFEF;
+    }
+
+    /* PIONEER PROGRAM SECTION */
+    .pioneers-section {
+      background-color: #1E42AC;
+      padding: 50px 20px;
+      border-radius: 10px;
+      margin: 50px auto;
+      max-width: 1000px;
+    }
+
+    .pioneers-section h2 {
+      font-size: 2.5rem;
+      color: #E5C3F0;
+    }
+
+    .pioneer-tier {
+      background-color: #EBECF0;
+      color: #172654;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .carousel {
+        height: 300px;
+      }
+      .button {
+        font-size: 1rem;
+        padding: 12px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      .carousel {
+        height: 200px;
+      }
+      .button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <a href="#pioneers" class="top-button">Join GINOM PIONEERS</a>
+
+  <div class="container">
+    <img src="logo-white.svg" alt="GINOM Logo" class="logo">
+    <h1>GINOM - Coming Soon</h1>
+    <p>Prepare For The Great Reveal</p>
+    <p><strong>GINOM® – The Next Generation in Critical Infrastructure Management</strong></p>
+    <p>The Ginom software platform delivers a groundbreaking solution for simulating and dynamically managing multi-sectorial critical infrastructures. It empowers organizations to enhance resilience, reduce risks, effectively manage crises, and optimize infrastructure for operational efficiency.</p>
+    
+    <div class="carousel">
+      <img src="mockup1.png" alt="Mockup 1" class="active">
+      <img src="mockup2.png" alt="Mockup 2">
+      <img src="mockup3.png" alt="Mockup 3">
+      <img src="mockup4.png" alt="Mockup 4">
+    </div>
+
+    <a href="mailto:info@ginom.ai" class="button">Contact Us</a>
+
+    <!-- PIONEER PROGRAM SECTION -->
+    <div id="pioneers" class="pioneers-section">
+      <h2>GINOM PIONEERS Program</h2>
+      <p>The GINOM PIONEERS program is an exclusive initiative for industry leaders looking to shape the future of crisis management technology. Gain early access, influence system development, and enjoy exclusive benefits.</p>
+
+      <div class="pioneer-tier"><strong>Silver ($2,000)</strong><br> Early access to BETA versions, standard onboarding priority, 5% discount on the annual license, feature voting rights.</div>
+      <div class="pioneer-tier"><strong>Gold ($5,000)</strong><br> Priority onboarding, access to all BETA versions, 10% discount on the annual license, higher voting influence.</div>
+      <div class="pioneer-tier"><strong>Platinum ($10,000)</strong><br> Top-priority installation, access to prototypes, 15% discount on the annual license, direct involvement in development, VIP networking events.</div>
+
+      <a href="mailto:info@ginom.ai" class="button">Join Now</a>
+    </div>
+
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 3000); // Change image every 3 seconds
+  </script>
+
+</body>
+</html>
