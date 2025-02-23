@@ -27,15 +27,13 @@
       text-align: center;
       scroll-behavior: smooth;
     }
-    
+
     .container {
-      position: relative;
-      z-index: 1;
       max-width: 1200px;
       padding: 20px;
       margin: auto;
     }
-    
+
     .top-button {
       position: fixed;
       top: 20px;
@@ -60,21 +58,21 @@
       width: 200px;
       margin-bottom: 20px;
     }
-    
+
     h1 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 20px;
       color: #E5C3F0;
     }
-    
+
     p {
       font-size: 1.2rem;
       font-weight: 400;
       margin-bottom: 20px;
       color: #EBECF0;
     }
-    
+
     .carousel {
       width: 100%;
       height: 500px;
@@ -120,7 +118,7 @@
       background-color: #C3CFEF;
     }
 
-    /* PIONEER PROGRAM SECTION */
+    /* PIONEERS SECTION */
     .pioneers-section {
       background-color: #1E42AC;
       padding: 50px 20px;
@@ -134,45 +132,61 @@
       color: #E5C3F0;
     }
 
+    /* FLEX CONTAINER FOR TIER BOXES */
+    .tiers-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
     .pioneer-tier {
       background-color: #EBECF0;
       color: #172654;
-      padding: 15px;
+      padding: 20px;
       border-radius: 8px;
-      margin: 15px 0;
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+
+    .pioneer-tier h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .pioneer-tier ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pioneer-tier ul li {
+      font-size: 1rem;
+      padding: 5px 0;
+    }
+
+    .pioneer-tier ul li::before {
+      content: "• ";
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1E42AC;
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
+      .tiers-container {
+        flex-direction: column;
+        align-items: center;
       }
-      p {
-        font-size: 1rem;
+
+      .pioneer-tier {
+        width: 100%;
       }
+
       .carousel {
         height: 300px;
       }
-      .button {
-        font-size: 1rem;
-        padding: 12px 25px;
-      }
     }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 0.9rem;
-      }
-      .carousel {
-        height: 200px;
-      }
-      .button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -184,8 +198,8 @@
     <h1>GINOM - Coming Soon</h1>
     <p>Prepare For The Great Reveal</p>
     <p><strong>GINOM® – The Next Generation in Critical Infrastructure Management</strong></p>
-    <p>The Ginom software platform delivers a groundbreaking solution for simulating and dynamically managing multi-sectorial critical infrastructures. It empowers organizations to enhance resilience, reduce risks, effectively manage crises, and optimize infrastructure for operational efficiency.</p>
-    
+    <p>The Ginom software platform delivers a groundbreaking solution for simulating and dynamically managing multi-sectorial critical infrastructures.</p>
+
     <div class="carousel">
       <img src="mockup1.png" alt="Mockup 1" class="active">
       <img src="mockup2.png" alt="Mockup 2">
@@ -195,14 +209,43 @@
 
     <a href="mailto:info@ginom.ai" class="button">Contact Us</a>
 
-    <!-- PIONEER PROGRAM SECTION -->
+    <!-- PIONEERS PROGRAM SECTION -->
     <div id="pioneers" class="pioneers-section">
       <h2>GINOM PIONEERS Program</h2>
-      <p>The GINOM PIONEERS program is an exclusive initiative for industry leaders looking to shape the future of crisis management technology. Gain early access, influence system development, and enjoy exclusive benefits.</p>
+      <p>Join an exclusive initiative to shape the future of crisis management technology.</p>
 
-      <div class="pioneer-tier"><strong>Silver ($2,000)</strong><br> Early access to BETA versions, standard onboarding priority, 5% discount on the annual license, feature voting rights.</div>
-      <div class="pioneer-tier"><strong>Gold ($5,000)</strong><br> Priority onboarding, access to all BETA versions, 10% discount on the annual license, higher voting influence.</div>
-      <div class="pioneer-tier"><strong>Platinum ($10,000)</strong><br> Top-priority installation, access to prototypes, 15% discount on the annual license, direct involvement in development, VIP networking events.</div>
+      <div class="tiers-container">
+        <div class="pioneer-tier">
+          <h3>Silver ($2,000)</h3>
+          <ul>
+            <li>Early access to select BETA versions</li>
+            <li>Standard onboarding priority</li>
+            <li>5% discount on annual license</li>
+            <li>Participation in feature voting</li>
+          </ul>
+        </div>
+        
+        <div class="pioneer-tier">
+          <h3>Gold ($5,000)</h3>
+          <ul>
+            <li>Priority onboarding</li>
+            <li>Access to all BETA versions</li>
+            <li>10% discount on annual license</li>
+            <li>Higher influence in feature voting</li>
+          </ul>
+        </div>
+        
+        <div class="pioneer-tier">
+          <h3>Platinum ($10,000)</h3>
+          <ul>
+            <li>Top-priority system installation</li>
+            <li>Exclusive access to prototype versions</li>
+            <li>15% discount on annual license</li>
+            <li>Direct involvement in product strategy</li>
+            <li>VIP invitations to exclusive events</li>
+          </ul>
+        </div>
+      </div>
 
       <a href="mailto:info@ginom.ai" class="button">Join Now</a>
     </div>
@@ -219,7 +262,7 @@
       images[currentIndex].classList.add('active');
     }
 
-    setInterval(showNextImage, 3000); // Change image every 3 seconds
+    setInterval(showNextImage, 3000);
   </script>
 
 </body>
