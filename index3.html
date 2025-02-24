@@ -1,269 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GINOM - Coming Soon</title>
-  <link rel="icon" href="Fav-icon.png" type="image/png">
-  <style>
-    @font-face {
-      font-family: 'Geist';
-      src: url('Geist-Regular.ttf') format('truetype');
-      font-weight: 400;
-    }
-    @font-face {
-      font-family: 'Geist';
-      src: url('Geist-Bold.ttf') format('truetype');
-      font-weight: 700;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GINOM PIONEERS</title>
+    <link rel="icon" href="Fav-icon.png" type="image/png">
+    <style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('Geist-Regular.ttf') format('truetype');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Geist';
+            src: url('Geist-Bold.ttf') format('truetype');
+            font-weight: 700;
+        }
 
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Geist', sans-serif;
-      background-color: #172654;
-      color: #FFFFFF;
-      text-align: center;
-      scroll-behavior: smooth;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Geist', sans-serif;
+            background: url('PIONEER.jpg') no-repeat center center/cover;
+            color: #FFFFFF;
+            text-align: center;
+        }
 
-    .container {
-      max-width: 1200px;
-      padding: 20px;
-      margin: auto;
-    }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
 
-    .top-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      font-weight: 600;
-      background-color: #E5C3F0;
-      color: #172654;
-      border: none;
-      /* border-radius: 20px; */
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
+        .container {
+            max-width: 1200px;
+            padding: 40px;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
 
-    .top-button:hover {
-      background-color: #C3CFEF;
-    }
+        .header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: left;
+        }
 
-    .logo {
-      width: 200px;
-      margin-bottom: 20px;
-    }
+        .description {
+            font-size: 1.2rem;
+            text-align: left;
+            margin-bottom: 30px;
+        }
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #E5C3F0;
-    }
+        .tiers-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-    p {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin-bottom: 20px;
-      color: #EBECF0;
-    }
+        .tier {
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 280px;
+            text-align: left;
+            position: relative;
+        }
 
-    .carousel {
-      width: 100%;
-      height: 500px;
-      position: relative;
-      overflow: hidden;
-      /* border-radius: 10px; */
-      margin: 30px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .tier h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-    .carousel img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      position: absolute;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+        .tier ul {
+            list-style: none;
+            padding-left: 20px;
+        }
 
-    .carousel img.active {
-      opacity: 1;
-      position: relative;
-    }
+        .tier ul li {
+            font-size: 1rem;
+            padding: 5px 0;
+        }
 
-    .button {
-      padding: 15px 40px;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #FFFFFF;
-      background-color: #CEC2EF;
-      border: none;
-      /* border-radius: 30px; */
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      display: inline-block;
-      margin-top: 20px;
-    }
+        .tier ul li::before {
+            content: "• ";
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
 
-    .button:hover {
-      background-color: #C3CFEF;
-    }
+        .silver { border: 3px dashed #C3CFEF; }
+        .gold { border: 3px dashed #FFD700; }
+        .platinum { border: 3px dashed #FFFFFF; }
 
-    /* PIONEERS SECTION */
-    .pioneers-section {
-      position: relative;
-      background-color: #1E42AC;
-      padding: 50px 20px;
-      margin: 50px auto;
-      max-width: 1000px;
-      border: 3px dashed #C3CFEF;
-      position: relative;
-      /* border-radius: 10px; */
-      overflow: hidden;
-    }
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 15px;
+        }
 
-    /* Background Image with Opacity */
-    .pioneers-section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('PIONEER.jpg') no-repeat center center/cover;
-      opacity: 0.3;
-    }
+        .side-image {
+            position: absolute;
+            right: 50px;
+            top: 100px;
+            width: 400px;
+            border-radius: 10px;
+        }
 
-    .pioneers-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .pioneers-section h2 {
-      font-size: 2.5rem;
-      color: #E5C3F0;
-    }
-
-    /* CORNER SQUARES */
-    .corner-square {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-    }
-
-    .top-left { background-color: #000000; top: -10px; left: -10px; }
-    .top-right { background-color: #FFFFFF; top: -10px; right: -10px; }
-    .bottom-left { background-color: #1E42AC; bottom: -10px; left: -10px; }
-    .bottom-right { background-color: #E5C3F0; bottom: -10px; right: -10px; }
-
-    /* FLEX CONTAINER FOR TIER BOXES */
-    .tiers-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .pioneer-tier {
-      background-color: #EBECF0;
-      color: #172654;
-      padding: 20px;
-      /* border-radius: 8px; */
-      flex: 1;
-      min-width: 250px;
-      text-align: left;
-    }
-
-    .pioneer-tier h3 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .pioneer-tier ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .pioneer-tier ul li {
-      font-size: 1rem;
-      padding: 5px 0;
-    }
-
-    .pioneer-tier ul li::before {
-      content: "• ";
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #1E42AC;
-    }
-
-    @media (max-width: 768px) {
-      .tiers-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .pioneer-tier {
-        width: 100%;
-      }
-
-      .carousel {
-        height: 300px;
-      }
-    }
-
-  </style>
+        @media (max-width: 1024px) {
+            .side-image {
+                display: none;
+            }
+            .tiers-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <a href="#pioneers" class="top-button">Join GINOM PIONEERS</a>
-
-  <div class="container">
-    <img src="logo-white.svg" alt="GINOM Logo" class="logo">
-    <h1>GINOM - Coming Soon</h1>
-
-    <div class="carousel">
-      <img src="mockup1.png" alt="Mockup 1" class="active">
-      <img src="mockup2.png" alt="Mockup 2">
-      <img src="mockup3.png" alt="Mockup 3">
-      <img src="mockup4.png" alt="Mockup 4">
-    </div>
-
-    <a href="mailto:info@ginom.ai" class="button">Contact Us</a>
-
-    <!-- PIONEERS PROGRAM SECTION -->
-    <div id="pioneers" class="pioneers-section">
-      <div class="corner-square top-left"></div>
-      <div class="corner-square top-right"></div>
-      <div class="corner-square bottom-left"></div>
-      <div class="corner-square bottom-right"></div>
-
-      <div class="pioneers-content">
-        <h2>GINOM PIONEERS Program</h2>
-        <p>Exclusive program for industry leaders shaping the future of crisis management.</p>
-
-        <h2>Membership Tiers & Benefits</h2>
-
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="header">GINOM PIONEERS</h1>
+        <p class="description">The GINOM PIONEERS program empowers industry leaders to shape the future of crisis management. Members gain early access to advanced simulations, influence system development, and enjoy priority support and exclusive discounts, enhancing their operational resilience and decision-making.</p>
+        
         <div class="tiers-container">
-          <div class="pioneer-tier"><h3>Silver ($2,000)</h3><ul><li>Early BETA access</li><li>5% discount</li><li>Feature voting</li></ul></div>
-          <div class="pioneer-tier"><h3>Gold ($5,000)</h3><ul><li>Priority onboarding</li><li>10% discount</li><li>Higher voting influence</li></ul></div>
-          <div class="pioneer-tier"><h3>Platinum ($10,000)</h3><ul><li>Top-priority installation</li><li>Exclusive prototype access</li><li>15% discount</li><li>VIP events</li></ul></div>
+            <div class="tier silver">
+                <h3>SILVER</h3>
+                <ul>
+                    <li>Early access to select BETA versions for testing.</li>
+                    <li>Standard onboarding priority for the production version.</li>
+                    <li>A 5% discount on the annual license.</li>
+                    <li>Participation in feature voting for future system upgrades.</li>
+                </ul>
+                <p class="price">2000$</p>
+            </div>
+            <div class="tier gold">
+                <h3>GOLD</h3>
+                <ul>
+                    <li>Priority onboarding, ensuring faster integration.</li>
+                    <li>Access to all BETA versions before public release.</li>
+                    <li>A 10% discount on the annual license.</li>
+                    <li>Greater influence in feature voting with higher voting weight.</li>
+                </ul>
+                <p class="price">5000$</p>
+            </div>
+            <div class="tier platinum">
+                <h3>PLATINUM</h3>
+                <ul>
+                    <li>Top-priority installation upon release.</li>
+                    <li>Exclusive access to prototype versions.</li>
+                    <li>A 15% discount on the annual license.</li>
+                    <li>Discussions with GINOM’s core development team.</li>
+                    <li>VIP invitations to exclusive events and roundtables.</li>
+                </ul>
+                <p class="price">10000$</p>
+            </div>
         </div>
-
-        <a href="mailto:info@ginom.ai" class="button">Join Now</a>
-      </div>
     </div>
-
-  </div>
+    <img src="PIONEER.jpg" alt="GINOM Simulation" class="side-image">
 </body>
 </html>
